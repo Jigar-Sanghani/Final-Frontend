@@ -16,31 +16,24 @@ const productApi = {
    post : async (data) => {
     try {
         let formData = new FormData();
-        // Append data to the FormData object
         formData.append("title", data.title);
         formData.append("price", data.price);
         formData.append("description", data.description);
-        formData.append("img", data.img); // Ensure this is a File object
+        formData.append("img", data.img);
 
         const product = await fetch(`${baseUrl}/products/create`, {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${getToken()}`,
-                // No need to set "Content-Type", as the browser will set it automatically for multipart/form-data
             },
             body: formData,
         });
-
-        // Check if the response status is OK
-        if (!product.ok) {
-            throw new Error(`Error: ${product.statusText}`);
-        }
 
         let res = await product.json();
         return res;
     } catch (error) {
         console.error("Request failed:", error);
-        throw error; // Re-throw error to handle it outside the function
+        throw error; 
     }
 },
 

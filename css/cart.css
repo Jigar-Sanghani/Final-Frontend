@@ -1,0 +1,166 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(120deg, #e0eafc, #cfdef3);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
+
+
+#productList {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Cart Item Styles */
+#productList div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+#productList div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+#productList img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    margin-right: 20px;
+}
+
+/* Text and Buttons */
+.item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.item-info h3 {
+    font-size: 22px;
+    color: #2c3e50;
+    margin: 0;
+    text-transform: capitalize;
+}
+
+.item-info p {
+    font-size: 18px;
+    color: #27ae60;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Quantity Buttons */
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-controls button {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+    font-weight: bold;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #6c5ce7, #00cec9);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.quantity-controls button:hover {
+    background: linear-gradient(135deg, #00cec9, #6c5ce7);
+    transform: scale(1.1);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.quantity-controls button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.quantity-controls span {
+    font-size: 20px;
+    color: #2c3e50;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+/* Total Price and Pay Button */
+.total {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.total h1 {
+    font-size: 26px;
+    color: #34495e;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.total button {
+    padding: 20px 40px;
+    background: linear-gradient(135deg, #e74c3c, #ff7675);
+    border: none;
+    border-radius: 50px;
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.total button:hover {
+    transform: translateY(-5px);
+    background: linear-gradient(135deg, #ff7675, #e74c3c);
+    box-shadow: 0px 12px 20px rgba(0, 0, 0, 0.3);
+}
+
+.total button:active {
+    transform: scale(0.95);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #productList div {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    #productList img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .quantity-controls {
+        margin-top: 10px;
+    }
+}

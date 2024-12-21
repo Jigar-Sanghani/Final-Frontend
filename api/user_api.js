@@ -3,6 +3,17 @@ import { getBaseUrl } from "./config/api_config.js";
 
 const baseUrl = getBaseUrl();
 const userApi = {
+
+    get: async () => {
+        try {
+            let user = await fetch(`${baseUrl}/user`);
+            let res = await user.json();
+            return res;
+        } catch (error) {
+            console.log(error);
+        }
+    },
+
     signup: async (user) => {
         try {
             let req = await fetch(`${baseUrl}/user/signup`, {
@@ -14,9 +25,9 @@ const userApi = {
             });
             let res = await req.json();
             console.log(res);
-            
-            Cookies.set("token", res.token, { expires: 1 / 24 });
-    
+
+            Cookies.set("token", res.token, { expires: 1 / 7 });
+
             Cookies.set("isVerified", res.isVerified);
             console.log(res.token);
             // window.location.href = "/index.html";
@@ -35,7 +46,7 @@ const userApi = {
             });
             let res = await req.json();
             if (res.isActive) {
-                Cookies.set("token", res.token, { expires: 1 /   24 });
+                Cookies.set("token", res.token, { expires: 1 / 7 });
                 Cookies.set("isVerified", res.isVerified);
                 window.location.href = "/index.html";
             } else {

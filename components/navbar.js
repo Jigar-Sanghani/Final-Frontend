@@ -29,9 +29,9 @@ const navbar = () => {
 
     let tag = ``;
     if (decodedToken) {
-        tag = `<a class="nav-link" aria-current="page" id=logout    >Log-Out</a>`;
+        tag = `<a class="nav-link" aria-current="page" id=logout style="cursor: pointer"   >Log-Out</a>`;
     } else {
-        tag = `<a class="nav-link" aria-current="page" href="/html/login.html">
+        tag = `<a class="nav-link" aria-current="page" href="/html/login.html" style="cursor: pointer">
           Log-In
         </a>`;
     }
@@ -62,7 +62,7 @@ const navbar = () => {
                     ${tag}
                     </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" ${decodedToken ? "" : ` href=/html/signup.html`
+              <a class="nav-link" style="cursor: pointer" aria-current="page" ${decodedToken ? `href =/html/user_profile.html ` : ` href=/html/signup.html`
         }>${decodedToken ? decodedToken.username : "Sign-Up"}</a>
             </li>
                 </ul>

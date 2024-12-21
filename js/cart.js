@@ -18,16 +18,24 @@ const handleQty = (id, opr) => {
 };
 
 let totalPrice = 0;
+let totalqty = 0;
 const mapper = (data) => {
     data.map(({ _id, qty, product }) => {
         const { title, price, img } = product;
         totalPrice += price * qty;
+        totalqty += qty;
 
         let titleTag = document.createElement("h3");
-        titleTag.innerHTML = title;
+        titleTag.innerHTML = `Title : ${title}`;
 
-        let priceTag = document.createElement("p");
-        priceTag.innerHTML = price;
+        let priceTag = document.createElement("h5");
+        priceTag.innerHTML = ` Price : ${price}`;
+
+        let qtytag = document.createElement("h5");
+        qtytag.innerHTML = `Qty : ${qty}`
+
+        let total = document.createElement("h5");
+        total.innerHTML = `Total : ${price * qty}`
 
         let imgTag = document.createElement("img");
         imgTag.src = `http://localhost:8090/${img}`;
@@ -47,19 +55,22 @@ const mapper = (data) => {
         btnDiv.append(btn1, btn2, btn3);
 
         let div = document.createElement("div");
-        div.append(imgTag, titleTag, priceTag, btnDiv);
+        div.append(imgTag, titleTag, priceTag, qtytag, total, btnDiv);
         document.getElementById("productList").append(div);
     });
 
-    let amount = document.createElement("h1");
+    let amount = document.createElement("h2");
     amount.innerHTML = `Total Price : ${totalPrice}`;
+
+    let qty = document.createElement("h2");
+    qty.innerHTML = `Total Qty : ${totalqty}`;
 
     let btn = document.createElement("button");
     btn.innerHTML = "Pay";
     btn.addEventListener("click", () => payment(totalPrice));
 
     let div = document.createElement("div");
-    div.append(amount, btn);
+    div.append(amount,qty, btn);
     document.getElementById("productList").append(div);
     console.log("total", totalPrice);
 };
