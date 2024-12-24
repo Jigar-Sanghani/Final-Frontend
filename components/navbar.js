@@ -1,6 +1,6 @@
 
 
-// let decodedToken;
+    // let decodedToken;
 
 import { getToken } from "../utils/coockie.js";
 console.log(getToken());
@@ -14,6 +14,12 @@ if (getToken()) {
     } catch (e) {
         console.log("Token decoding failed", e);
     }
+}
+
+let tag1 = ``
+
+if (decodedToken?.role == "ADMIN") {
+    tag1 = `<a class="nav-link" aria-current="page" id=logout style="cursor: pointer" href="/html/admin/add_product.html"  >Add-Product</a>`;
 }
 
 
@@ -60,6 +66,9 @@ const navbar = () => {
                     </li>
                     <li class="nav-item">
                     ${tag}
+                    </li>
+                    <li class="nav-item">
+                    ${tag1}
                     </li>
             <li class="nav-item">
               <a class="nav-link" style="cursor: pointer" aria-current="page" ${decodedToken ? `href =/html/user_profile.html ` : ` href=/html/signup.html`
