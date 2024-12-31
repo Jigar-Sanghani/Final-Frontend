@@ -38,7 +38,7 @@ const mapper = (data) => {
         total.innerHTML = `Total : ${price * qty}`
 
         let imgTag = document.createElement("img");
-        imgTag.src = `http://localhost:8090/${img}`;
+        imgTag.src = `https://final-backend-4-jpnu.onrender.com/${img}`;
 
         let btn1 = document.createElement("button");
         btn1.innerHTML = "-";

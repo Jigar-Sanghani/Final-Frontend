@@ -32,11 +32,11 @@ const mapper = (data) => {
         let descriptionTag = document.createElement("p");
         descriptionTag.innerHTML = `Description : ${description}`;
         let imgTag = document.createElement("img");
-        imgTag.src = `http://localhost:8090/${img}`;
+        imgTag.src = `https://final-backend-4-jpnu.onrender.com/${img}`;
         let btn = document.createElement("button");
         btn.innerHTML = "Buy";
         btn.addEventListener("click", () => handleAddToCart(_id));
-        div.append(imgTag, titleTag, priceTag,descriptionTag, btn );
+        div.append(imgTag, titleTag, priceTag, descriptionTag, btn);
         document.getElementById("productList").append(div);
     });
 };
