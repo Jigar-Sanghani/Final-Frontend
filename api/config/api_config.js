@@ -1,2 +1,2 @@
 
-export const getBaseUrl = () => "http://localhost:8090";
+export const getBaseUrl = () => "https://final-backend-4-jpnu.onrender.com";
