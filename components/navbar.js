@@ -27,7 +27,7 @@ const logOut = () => {
     console.log("Decoded token");
 
     Cookies.remove("token");
-    window.location.href = "/html/login.html";
+    window.location.href = "/";
 };
 
 
