@@ -54,6 +54,14 @@ p {
     color: #007BFF !important;
 }
 
+body {
+    background: linear-gradient(120deg, #007bff, #d0314c);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #user_profile div i {
     font-size: 36px;
     color: #777;

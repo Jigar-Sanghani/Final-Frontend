@@ -1,5 +1,5 @@
 /* General Styles */
-body {
+/* body {
     margin: 0;
     font-family: 'Poppins', Arial, sans-serif;
     background: linear-gradient(120deg, #e0eafc, #cfdef3);
@@ -9,6 +9,14 @@ body {
     align-items: center;
     min-height: 100vh;
     padding-bottom: 50px;
+} */
+
+body {
+    background: linear-gradient(120deg, #007bff, #d0314c);
+    /* min-height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 
